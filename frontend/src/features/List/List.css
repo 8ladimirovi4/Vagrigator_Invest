@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,600&family=Jura:wght@400;500;600;700&family=Lato:ital,wght@0,700;0,900;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  color: black;
+}
+
+.list__container {
+  margin: 10px 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+table {
+  user-select: none;
+}
+
+caption {
+  font-weight: 800;
+  font-size: 32px;
+  padding: 5px;
+  margin: 5px;
+  color: #757179;
+  margin-top: 40px;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 700;
+}
+
+caption:nth-child(1) {
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1em;
+  text-align: left;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+ 
+}
+
+.container th h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.container td {
+  font-weight: normal;
+  font-size: 24px;
+  box-shadow: 0 2px 2px -2px #0E1119;
+  cursor: pointer;
+  /* max-width: 300px; */
+  height: 30px;
+}
+
+.list__container {
+  min-height: 71vh;
+}
+
+.container {
+  text-align: left;
+  overflow: hidden;
+  width: 95%;
+  margin: 0 auto;
+  display: table;
+  position: relative;
+  /* padding: 0 0 18em 0; */
+}
+
+.container td,
+.container th {
+  padding-bottom: 17px;
+  padding-top: 17px;
+  text-align: center;
+  width: 200px;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.container td:nth-child(4),
+.container th:nth-child(4) {
+  width: 180px;
+}
+
+.container td:nth-child(5),
+.container th:nth-child(5) {
+  width: 150px;
+}
+
+.td__name {
+  font-size: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.table__percent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.tringle__up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid green;
+}
+
+.tringle__down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid red;
+}
+
+td{
+  background-color: whitesmoke;
+}
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+  background-color: rgba(121, 183, 219);
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+  background: white
+}
+
+.container th {
+  background: rgb(178, 211, 230);
+  position: relative;
+  z-index: 2;
+}
+
+.container tr:hover {
+  background-color: #464A52;
+}
+
+.container__button {
+  font-size: x-large;
+  cursor: pointer;
+  line-height: 40px;
+  width: 305px;
+  text-align: center;
+  height: 47px;
+  /* border: 1px solid black; */
+  border: 0.5px solid lightgray;
+  position: absolute;
+  top: 105px;
+  left: 2px;
+  background: lightgray;
+  border-radius: 5px;
+  z-index: 1;
+  transition: 1s;
+}
+
+.container__button::before {
+  content: "+";
+  color: black;
+  line-height: 38px;
+  font-size: 40px;
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: lightgray;
+  top: -51.5px;
+  left: 10px;
+  border: 0.5px solid lightgray;
+}
+
+.container__button:hover {
+  transform: translateY(-40px)
+}
+
+.table__edit__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.table__btn__edit,
+.table__btn__sell {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/738/738880.png');
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  transition: 0.3s linear;
+}
+
+.table__btn__sell {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5166/5166122.png')
+}
+
+.table__btn__edit:hover,
+.table__btn__sell:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,103 @@
+.footer {
+  width: 100%;
+  background: #2F879D;
+  color: white;
+  font-size: 14px;
+}
+
+.footer__icons {
+  width: min-content;
+}
+
+.footer__icons__logo {
+  display: inline-block;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 150px;
+}
+
+.footer__left,
+.footer__middle,
+.footer__right {
+  width: 250px;
+  height: 100px;
+  margin: 5px;
+}
+
+.footer__left__logo {
+  width: 70%;
+  height: 30px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.footer__left__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  margin-top: 10px;
+}
+
+.footer__middle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.footer__middle__address,
+.footer__middle__phone,
+.footer__middle__email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+
+.footer__middle__address__logo1,
+.footer__middle__address__logo2,
+.footer__middle__address__logo3 {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/684/684818.png');
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+}
+
+.footer__middle__address__logo2 {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/684/684813.png')
+}
+
+.footer__middle__address__logo3 {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/684/684820.png')
+}
+
+.footer__middle__address,
+.footer__middle__phone,
+.footer__middle__email {
+  width: 75%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.footer__right__about {
+  margin-top: 10px;
+}
+
+.footer__right__about__title,
+.footer__right__about__text {
+  text-align: center;
+  color: black;
+}
+
+.footer__reserved {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.637);
+  text-align: center;
+  padding: 5px 0;
+}

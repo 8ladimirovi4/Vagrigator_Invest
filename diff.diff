@@ -1,0 +1,165 @@
+diff --git a/backend/app.js b/backend/app.js
+index a845634..b8dcc7e 100644
+--- a/backend/app.js
++++ b/backend/app.js
+@@ -5,21 +5,19 @@ const config = require("./config/config");
+ const authRouterApi = require('./routes/api/authRouteApi');
+ const listRouterApi = require('./routes/api/listRouteApi');
+ const lkRouterApi = require('./routes/api/lkRouteApi');
+-const path = require('path')
+-
+ const app = express();
+ config(app);
+ const PORT = process.env.PORT ?? 4000;
+-app.use(express.static(path.join(__dirname, '../frontend/build')));
+-app.get('*', (req, res) => res.sendFile(path.resolve('../frontend/build/index.html')))
+ app.use('/api', authRouterApi);
+ app.use('/api/', listRouterApi);
+ app.use('/api/lk', lkRouterApi);
+ app.listen(PORT, async () => {
+   try {
+     // eslint-disable-next-line no-console
++    console.log(`Server started at ${PORT} port...`);
+     // await sequelize.authenticate();
+   } catch (error) {
+     // eslint-disable-next-line no-console
++    console.log(error.message);
+   }
+ });
+\ No newline at end of file
+diff --git a/backend/db/config/database.json b/backend/db/config/database.json
+index d899dea..1a3d3f4 100644
+--- a/backend/db/config/database.json
++++ b/backend/db/config/database.json
+@@ -1,14 +1,5 @@
+ {
+   "development": {
+     "use_env_variable": "DATABASE_URL"
+-  },
+-  "production": {
+-    "use_env_variable": "DATABASE_URL",
+-    "dialect": "postgres",
+-    "dialectOptions": {
+-      "ssl": {
+-        "rejectUnauthorized": false
+-      }
+-    }
+   }
+ }
+\ No newline at end of file
+diff --git a/backend/routes/api/authRouteApi.js b/backend/routes/api/authRouteApi.js
+index 2e9c919..fcdaf7f 100644
+--- a/backend/routes/api/authRouteApi.js
++++ b/backend/routes/api/authRouteApi.js
+@@ -46,7 +46,7 @@ authRouterApi.post("/auth/login", async (req, res) => {
+ // Registration ROUTER
+ 
+ authRouterApi.post("/auth/reg", async (req, res) => {
+-
++  console.log(req.body);
+   const { login, email, password, checkPassword } = req.body;
+ 
+   let user;
+diff --git a/frontend/src/features/List/ItemDescription.jsx b/frontend/src/features/List/ItemDescription.jsx
+index 25b839a..a31310d 100644
+--- a/frontend/src/features/List/ItemDescription.jsx
++++ b/frontend/src/features/List/ItemDescription.jsx
+@@ -16,6 +16,7 @@ function ItemDescription() {
+       `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${apiKey}`
+     );
+     let data = await response.json();
++    console.log(data);
+     setStock(data);
+   }
+ 
+@@ -33,6 +34,7 @@ function ItemDescription() {
+         }),
+       });
+       const data = await response.json();
++      console.log(data);
+       const newArr = []
+       .concat(
+         data.candles
+@@ -173,6 +175,7 @@ function ItemDescription() {
+       const data = await response.json();
+       setData(data.candles.map((el) => el.open.units))
+       setName(data.candles.map((el) => el.time.slice(5, 10)))
++      console.log("data2", data);
+     } else {
+       const response = await fetch(`/api/list/${figi}`, {
+         method: "POST",
+@@ -184,6 +187,7 @@ function ItemDescription() {
+         }),
+       });
+       const data = await response.json();
++      console.log(data);
+       setData(data.candles.map((el) => el.open.units))
+       setName(data.candles.map((el) => el.time.slice(11, 16)))
+     }
+diff --git a/frontend/src/features/Lk/Lk.jsx b/frontend/src/features/Lk/Lk.jsx
+index 31c836d..8755c26 100644
+--- a/frontend/src/features/Lk/Lk.jsx
++++ b/frontend/src/features/Lk/Lk.jsx
+@@ -31,7 +31,10 @@ function Lk() {
+   const [stock, setStock] = useState(1000000);
+   const [click, setClick] = useState(false);
+ 
++  console.log(click);
++
+   useEffect(() => {
++    console.log(1111);
+     fetch(`/api/lk`)
+       .then((result) => result.json())
+       .then((data) => {
+diff --git a/frontend/src/features/Modal/Modal.jsx b/frontend/src/features/Modal/Modal.jsx
+index 69b13d7..84fc6e1 100644
+--- a/frontend/src/features/Modal/Modal.jsx
++++ b/frontend/src/features/Modal/Modal.jsx
+@@ -16,7 +16,9 @@ const registration = async (e) => {
+     }),
+     headers: { "Content-Type": "application/json" },
+   });
++  console.log(response);
+   const data = await response.json();
++  console.log(data.message);
+ };
+ 
+ function Modal({ setClose }) {
+diff --git a/frontend/src/store/index.js b/frontend/src/store/index.js
+index 13a5a39..e01f097 100644
+--- a/frontend/src/store/index.js
++++ b/frontend/src/store/index.js
+@@ -6,4 +6,6 @@ const store = createStore(
+   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );
+ 
++console.log(store.getState());
++
+ export default store;
+diff --git a/package.json b/package.json
+deleted file mode 100644
+index 6fbda85..0000000
+--- a/package.json
++++ /dev/null
+@@ -1,21 +0,0 @@
+-{
+-  "name": "vagrigator",
+-  "version": "1.0.0",
+-  "description": "",
+-  "main": "index.js",
+-  "scripts": {
+-    "postinstall": "cd backend && npm i && npx sequelize db:migrate && cd ../frontend && npm i && DISABLE_ESLINT_PLUGIN=true npm run build",
+-    "start": "cd backend && npm start"
+-  },
+-  "repository": {
+-    "type": "git",
+-    "url": "git+https://github.com/SAMorozov22/Vagrigator.git"
+-  },
+-  "keywords": [],
+-  "author": "",
+-  "license": "ISC",
+-  "bugs": {
+-    "url": "https://github.com/SAMorozov22/Vagrigator/issues"
+-  },
+-  "homepage": "https://github.com/SAMorozov22/Vagrigator#readme"
+-}

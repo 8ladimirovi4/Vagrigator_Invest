@@ -1,0 +1,85 @@
+h2 {
+  color: grey;
+}
+.news__page {
+  margin: 20px 0;
+  min-height: 71vh;
+}
+
+.news__page__form form {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.news__page__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news__img {
+  width: 300px;
+}
+
+.news__card {
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 12px 2px;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news__card__img {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: 50% 40%;
+
+}
+
+.news__card__title {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  text-align: center;
+}
+
+.news__card__text {
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.news__button__link {
+  cursor: pointer;
+  background: #2F879D;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.news__button__link a {
+  text-decoration: none;
+  color: white;
+}
+
+.news__button__link:hover {
+  filter: brightness(0.9);
+}
+.ourTicker {
+  display: flex;
+   justify-content: space-around; 
+  padding-top: 15px;
+}
+
+.liTicker {
+  list-style: none;
+  cursor: pointer;
+  color: grey;
+  font-weight: 700;
+  font-style:unset;
+}

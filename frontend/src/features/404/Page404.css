@@ -1,0 +1,39 @@
+.error__page {
+  position: relative;
+  min-height: 70vh;
+}
+
+.error__man {
+  position: absolute;
+  top: 29%;
+  left: 40%;
+  z-index: -1;
+}
+
+.page404 {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px 2px;
+  text-align: center;
+  padding: 20px 30px;
+  height: 300px;
+  position: absolute;
+  transform: scale(0.7);
+  left: 15%;
+  top: 12%;
+}
+
+
+.page404__title,
+.page404__error__code,
+.page__message {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.page404__error__code {
+  font-size: 5rem;
+}

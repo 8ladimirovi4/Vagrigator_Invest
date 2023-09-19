@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&display=swap');
+
+.authauthentication {
+  background-image: url('https://s3.amazonaws.com/ultrawidewallpapers/336.jpg');
+  background-position: 100% 50%;
+  background-size: contain;
+  padding-bottom: 8px;
+  filter: brightness(0.9);
+}
+
+form {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.login__form__title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+}
+
+.authauthentication {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 71.4vh;
+}
+
+.login__form {
+  position: relative;
+  background: #2f879db9;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  height: 500px;
+  color: white;
+  border-radius: 20px;
+  top: 2.5%;
+  left: 1%;
+}
+
+.login__form__checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.login__form__checkbox__check {
+  transform: translateY(17px);
+}
+
+.login__form__checkbox__title {
+  display: flex;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 30px;
+  margin-left: 15px;
+}
+
+.login__form__checkbox__forgot {
+  color: white;
+  text-decoration: none;
+}
+
+.login__form__checkbox__forgot:hover {
+  text-decoration: underline;
+}

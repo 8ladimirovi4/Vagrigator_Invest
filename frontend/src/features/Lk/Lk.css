@@ -1,0 +1,118 @@
+.cabinet__balance {
+  text-align: center;
+  padding: 10px;
+  padding-top: 40px;
+}
+
+.cabinet__balance__title {
+  font-size: 2em;
+}
+
+.cabinet__balance__total__green {
+  font-size: 1.5em;
+  color: green;
+}
+
+.cabinet__balance__total__red {
+  font-size: 1.5em;
+  color: red;
+}
+
+.cabinet__chart_container {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cabinet__chartdoughnut_container {
+  width: 25vw;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px 2px;
+  padding: 0;
+  margin: 0;
+}
+
+.cabinet__chartline_container {
+  width: 97%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px 2px;
+  padding: 5px 15px;
+}
+
+.cabinet__balance__total {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.cabinet__assets {
+  width: 90%;
+  margin: 10px auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 2px 11px 6px, rgba(51, 51, 51, 0.177) 0px 0px 0px 3px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content:space-around;
+}
+
+.cabinet__assests__realEstate,
+.cabinet__assests__auto,
+.cabinet__assests__cash,
+.cabinet__assests__stock {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin: 10px;
+  padding: 8px 5px;
+  font-size: large;
+}
+
+.cabinet__assests__realEstate__info,
+.cabinet__assests__auto__info,
+.cabinet__assests__cash__info,
+.cabinet__assests__stock__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cabinet__assests__realEstate__price,
+.cabinet__assests__auto__price,
+.cabinet__assests__cash__price,
+.cabinet__assests__stock__price {
+  font-weight: bold;
+  display: flex;
+  column-gap: 80px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  width: 350px;
+  margin-right: 30px;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.496);
+}
+
+.cabinet__assests__realEstate__title,
+.cabinet__assests__auto__title,
+.cabinet__assests__cash__title,
+.cabinet__assests__stock__title {
+  color: rgba(0, 0, 0, 0.496);
+  font-size: 1.4em;
+}
+
+.cabinet__assests__realEstate__price__currect {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tringle__up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid green;
+}
+
+.tringle__down {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid red;
+}

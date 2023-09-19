@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&display=swap');
+
+.header {
+  background: #2F879D;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.header__title {
+  font-size: 2em;
+  padding: 10px 0;
+  line-height: 70px;
+}
+
+.header__title a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.header__nav__list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 0;
+}
+
+.header__nav__list__item {
+  list-style: none;
+}
+
+.header__nav__list__item__link {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.header__nav__list__item a {
+  flex-grow: 1;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+  font-weight: 400;
+  font-family: 'Roboto Slab', serif;
+}
+
+.header__nav__list__item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0) translateY(-40px);
+  background: white;
+  transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+}
+
+.header__nav__list__item a:hover::after {
+  transform: scaleX(0.8) translateY(-30px);
+}
