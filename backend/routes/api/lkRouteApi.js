@@ -10,7 +10,6 @@ lkRouterApi.get('/', async (req, res) => {
   const api = new TinkoffInvestApi({ token: token.jwt });
   const { accounts } = await api.users.getAccounts({});
   const account = accounts[0] 
-  console.log('===> account', account)
   const portfolio = await api.operations.getPortfolio({ accountId: account?.id });
   const totalStock = Number(String(portfolio.totalAmountShares.units) + '.' +  String(portfolio.totalAmountShares.units)) + Number(String(portfolio.totalAmountCurrencies.units) + '.' +  String(portfolio.totalAmountCurrencies.units));
   
