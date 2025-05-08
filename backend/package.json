@@ -2,9 +2,9 @@
   "name": "vagrigator",
   "version": "1.0.0",
   "description": "asset analytics",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "dev": "nodemon app.js --ext js,jsx,json --ignore sessions",
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },

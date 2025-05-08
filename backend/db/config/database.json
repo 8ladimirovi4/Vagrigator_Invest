@@ -1,5 +1,12 @@
 {
   "development": {
-    "use_env_variable": "DATABASE_URL"
-  }
+  "username": "middle",
+  "password": "1q2w3e4r",
+  "database": "vagrigator",
+  "host": "127.0.0.1",
+  "port": "5432",
+  "dialect": "postgres"
+  },
+  "test": {},
+  "production": {}
 }
