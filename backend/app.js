@@ -8,7 +8,7 @@ const lkRouterApi = require('./routes/api/lkRouteApi');
 const lineRouterApi = require('./routes/api/lineRouteApi');
 const app = express();
 config(app);
-const PORT = process.env.PORT ?? 4000;
+const PORT = process.env.PORT ?? 3001;
 app.use('/api', authRouterApi);
 app.use('/api/', listRouterApi);
 app.use('/api/lk', lkRouterApi);

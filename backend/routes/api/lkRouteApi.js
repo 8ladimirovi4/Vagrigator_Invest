@@ -9,9 +9,9 @@ lkRouterApi.get('/', async (req, res) => {
   const [ token ] = await User.findAll({raw:true, where:{ id }})
   const api = new TinkoffInvestApi({ token: token.jwt });
   const { accounts } = await api.users.getAccounts({});
-  console.log(accounts)
-  const account = id === 1? accounts[1] : accounts[2]
-  const portfolio = await api.operations.getPortfolio({ accountId: account.id });
+  const account = accounts[0] 
+  console.log('===> account', account)
+  const portfolio = await api.operations.getPortfolio({ accountId: account?.id });
   const totalStock = Number(String(portfolio.totalAmountShares.units) + '.' +  String(portfolio.totalAmountShares.units)) + Number(String(portfolio.totalAmountCurrencies.units) + '.' +  String(portfolio.totalAmountCurrencies.units));
   
   const historyData = await Total.findAll({raw:true, where:{ user_id: id }});

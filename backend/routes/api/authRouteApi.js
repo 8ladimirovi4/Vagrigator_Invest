@@ -1,3 +1,4 @@
+require("dotenv").config();
 const authRouterApi = require("express").Router();
 const bcrypt = require("bcrypt");
 
@@ -88,7 +89,7 @@ authRouterApi.post("/auth/reg", async (req, res) => {
     }
 
     const hash = await bcrypt.hash(password, 10);
-    user = await User.create({ login, password: hash, email, jwt: 't.IqcstrAyWvWMC8QcJS7rh2F1f6CENdXHtpKhndAjhpV82OncdvBcf9BwS8zBKve86rZkOy_XyjZJb4PY-rGXfg'});
+    user = await User.create({ login, password: hash, email, jwt: process.env.JWT || ''});
     req.session.user = {
       id: user.id,
       login: user.login,

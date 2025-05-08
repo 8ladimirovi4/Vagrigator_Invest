@@ -17,11 +17,11 @@ listRouterApi.get("/list/currency", async (req, res) => {
   const api = new TinkoffInvestApi({ token: token.jwt });
    // получить список счетов
    const { accounts } = await api.users.getAccounts({});
-   const account = id === 1? accounts[1] : accounts[2]
-   const portfolio = await api.operations.getPortfolio({ accountId: account.id });
+   const account = accounts[0] 
+   const portfolio = await api.operations.getPortfolio({ accountId: account?.id });
   
   const allCurrencies = await api.operations.getWithdrawLimits({
-    accountId: account.id,
+    accountId: account?.id,
    });
 
    const currencyList = allCurrencies.money.map(el => ({ 
@@ -39,8 +39,9 @@ listRouterApi.get("/list/assets", async (req, res) => {
   const api = new TinkoffInvestApi({ token: token.jwt });
   // получить список счетов
   const { accounts } = await api.users.getAccounts({});
-  const account = id === 1? accounts[1] : accounts[2]
-  const portfolio = await api.operations.getPortfolio({ accountId: account.id });
+  const account = accounts[0] 
+  console.log('===> accounts', accounts)
+  const portfolio = await api.operations.getPortfolio({ accountId: account?.id });
   const allActions = portfolio.positions.filter(el => el.instrumentType === 'share');
   const reqList = await Promise.all(
     allActions.map(async (el) => {
