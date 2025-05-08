@@ -40,7 +40,6 @@ listRouterApi.get("/list/assets", async (req, res) => {
   // получить список счетов
   const { accounts } = await api.users.getAccounts({});
   const account = accounts[0] 
-  console.log('===> accounts', accounts)
   const portfolio = await api.operations.getPortfolio({ accountId: account?.id });
   const allActions = portfolio.positions.filter(el => el.instrumentType === 'share');
   const reqList = await Promise.all(
