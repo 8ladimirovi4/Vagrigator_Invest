@@ -107,8 +107,8 @@ function List() {
           </thead>
 
           <tbody>
-            {assets.assets.map((el, i) => (
-              <tr onClick={getTicker} id={el.figi}>
+            {assets.assets.map((el, idx) => (
+              <tr onClick={getTicker} id={el.figi} key={idx}>
                 <td>
                   <div className="td__name">
                     <div className="table__ticker__name">{el.name}</div>

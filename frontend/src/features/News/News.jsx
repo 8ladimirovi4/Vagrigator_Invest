@@ -93,7 +93,7 @@ function News() {
                       {el.summary.slice(0, 80)}...
                     </p>
                     <div className="news__button__link">
-                      <a href={el.url} class="read__more">
+                      <a href={el.url} className="read__more">
                         Читать в источнике
                       </a>
                     </div>

@@ -3,9 +3,9 @@ import mock from './mock';
 
 function RunString() {
   return (
-    <div class="wrapper">
-      {mock.map((el) => (
-        <div class="mover">
+    <div className="wrapper">
+      {mock.map((el, idx) => (
+        <div className="mover" key={idx}>
           {el.price > 100 ? (
             <div className="greenTRingle"></div>
           ) : (

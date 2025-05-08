@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+require("dotenv").config();
 
 module.exports = {
   async up(queryInterface) {
@@ -10,7 +11,7 @@ module.exports = {
       login: 'treider',
       password: hash,
       email:'treider@snp.com',
-      jwt: 't.XgsdI_79Fm9NVATZt9QHzxt2OdlPP0b8F0MsffeRSpFYsAVh-R148DM0yFebOMTcAYLqEu4R92H4Io22nMIs9w',
+      jwt: process.env.JWT || '',
       createdAt: new Date(),
       updatedAt: new Date(),
     };
