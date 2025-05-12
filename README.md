@@ -58,7 +58,7 @@ Deployed via Netlify
 
 3. Create .env file and fill jwt token. (You can look at .env.example file in the root directory)
 
-4. Create jwt tocken T Bank (https://www.tbank.ru/invest/settings/api/)
+4. Create jwt tocken T-Bank (https://www.tbank.ru/invest/settings/api/)
 
 5. Install packages
 
@@ -109,6 +109,7 @@ Build project in production mode for further deployment
 ```sh
 npm run test
 ```
+Run tests
 
 ## 🔐 Test Login Credentials
 
@@ -116,6 +117,8 @@ You can use the following credentials to log in:
 
 **Email:** `treider@snp.com`  
 **Password:** `123456789`
+
+or register a new user
 
 ## 🎓 Educational Purpose
 
