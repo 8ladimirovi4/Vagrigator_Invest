@@ -110,4 +110,17 @@ Build project in production mode for further deployment
 npm run test
 ```
 
+## 🔐 Test Login Credentials
+
+You can use the following credentials to log in:
+
+**Email:** `treider@snp.com`  
+**Password:** `123456789`
+
+## 🎓 Educational Purpose
+
+This project was developed as part of an educational program.  
+You can view the original repository with all contributors' commits here:  
+[https://github.com/SAMorozov22/Vagrigator](https://github.com/SAMorozov22/Vagrigator)
+
 ### Happy coding!
